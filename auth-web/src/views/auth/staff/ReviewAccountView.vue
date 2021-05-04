@@ -32,6 +32,7 @@
                 :is="component.component"
                 v-bind="component.props"
                 v-on="component.events"
+                :ref="'component' + component.component"
               />
               <v-divider class="mt-11 mb-8" :key="`divider-${component.id}`"  v-if="idx !== componentList.length-1"></v-divider>
             </template>
@@ -161,6 +162,7 @@ export default class ReviewAccountView extends Vue {
 
   $refs: {
     accessRequest: AccessRequestModal,
+    componentproductFee: ProductFee
   }
 
   private get canSelect (): boolean {
